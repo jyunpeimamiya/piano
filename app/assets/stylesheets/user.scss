@@ -1,0 +1,586 @@
+@import
+url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+header{
+  height: 50px;
+  font-size: x-large;
+  font-weight: bold;
+  font-family: cursive;
+  color: bisque;
+  span,
+input {
+    
+    border:2px solid rgba(255,255,255,.5);
+    font-size:1.75em;
+    padding:.25em .5em .3125em;
+    color:rgba(255,255,255,.5);
+    border-radius:.25em;
+    background:transparent;
+    transition:all .100s;
+    
+    &:focus{
+        outline:none;
+        color:rgba(255,255,255,.75);
+        border-color:rgba(255,255,255,.75);
+    }
+    
+    &.keyup {
+        color:white;
+        border-color:white;
+        text-shadow:0 0 .125em white;
+        box-shadow:0 0 .25em white,inset 0 0 .25em white;
+    }
+}
+
+
+canvas {
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    pointer-events:none;
+}
+
+input {
+    font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+}
+
+$placeholder-color:rgba(255,255,255,.5);
+
+::-webkit-input-placeholder {
+    color:$placeholder-color;
+    text-shadow:0 0 .125em transparent;
+    transition:all .25s;
+}
+input:focus::-webkit-input-placeholder {
+    opacity:.5;
+}
+
+::-moz-placeholder {
+    color:$placeholder-color;
+    text-shadow:0 0 .125em transparent;
+    transition:all .25s;
+}
+input:focus::-moz-placeholder {
+    opacity:.5;
+}
+
+:-ms-input-placeholder {
+    color:$placeholder-color;
+    text-shadow:0 0 .125em transparent;
+    transition:all .25s;
+}
+input:focus:-ms-input-placeholder {
+    opacity:.5;
+}
+
+html,body {
+    height:100%;
+    overflow:hidden;
+}
+
+html {
+    background:#333 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/68397/forest-fly-agaric-fog-moss-fliegenpilz.jpg) no-repeat center bottom;
+    background-size:cover;
+}
+
+body {
+    box-shadow:inset 0 0 5em #000; 
+}
+
+input {
+    position:absolute;
+    box-sizing:border-box;
+    // bottom: 4em;
+    left:50%;
+    width:11em;
+    margin-left:-5.5em;
+    height: 50px;
+}
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  // display: flex;
+  justify-content: center;
+  background-color: yellowgreen;
+  min-height: 100vh;
+  position: relative;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+
+}
+
+  svg{
+    height: 500px;
+    width: 100vw;
+  }
+//   .hidden {
+//     #Key-72{
+//       height: 30px;
+//     }
+// }
+  .w {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+  }
+  
+  .w-body {
+    animation: 1.3s ease-in-out infinite alternate bodyStep;
+    background-color: #eb486b;
+    border-radius: 50%;
+    height: 160px;
+    overflow: hidden;
+    margin: -80px 0 0 -80px;
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    white-space: nowrap;
+  }
+  
+    .w-body-skin,
+    .w-body-skin::before,
+    .w-body-skin::after {
+      background-color: #e7ddb6;
+      border-radius: 50%;
+      display: block;
+      height: 85px;
+      width: 85px;
+    }
+    .w-body-skin {
+      animation: 0.07s ease-in-out infinite alternate skinShake;
+      margin: -20px auto 0;
+    }
+      .w-body-skin::before,
+      .w-body-skin::after {
+        border-radius: 0 0 50% 50%;
+        content: '';
+        transform: translateY(20px);
+      }
+      .w-body-skin::before {
+        margin-left: -90px;
+      }
+      .w-body-skin::after {
+        margin: -85px 0 0 90px;
+      }
+  
+    .w-body-nipples,
+    .w-body-nipples::after {
+      background-color: #f5978e;
+      border-radius: 50%;
+      display: block;
+      height: 10px;
+      position: relative;
+      width: 10px;
+    }
+      .w-body-nipples::after {
+        content: '';
+        margin-left: 56px;
+        transform: translateY(0);
+      }
+    .w-body-nipples {
+      animation: 0.07s ease-in-out infinite alternate nipplesShake;
+    }
+  
+    .w-head,
+    .w-head::before {
+      background-color: #e7ddb6;
+      display: block;
+      height: 30px;
+      margin: -106px 0 0 -17px;
+      position: absolute;
+      width: 34px;
+      z-index: 1;
+    }
+      .w-head {
+        animation: 1.3s ease-in-out infinite alternate bodyStep;
+      }
+      .w-head::before {
+        background-color: #eb486b;
+        border-radius: 50% 50% 0 0;
+        content: '';
+        height: 40px;
+        margin: -27px 0 0;
+      }
+  
+    .w-eye {
+      background-color: #772436;
+      border: 2px solid #e7ddb6;
+      border-radius: 0 8px 6px 70%;
+      display: block;
+      height: 8px;
+      margin: -11px 0 0 1px;
+      position: absolute;
+      width: 11px;
+      z-index: 1;
+    }
+      .w-eye::after {
+        background-color: #e7ddb6;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 5px;
+        margin: 1px 0 0 4px;
+        width: 5px;
+      }
+      .w-eye_right {
+        margin-left: 18px;
+        transform: scaleX(-1);
+      }
+  
+    .w-arm {
+      animation: 1.3s ease-in-out infinite alternate bodyStep;
+      margin: -63px 0 0 -80px;
+      position: absolute;
+    }
+      .w-arm_right {
+        animation: 1.3s ease-in-out infinite alternate bodyStepMirror;
+        margin-left: 80px;
+      }
+      .w-arm::before {
+        animation: 0.07s ease-in-out infinite alternate armShake;
+        border-radius: 30px 30px 0 0;
+        background-color: #d8cca7;
+        content: '';
+        height: 80px;
+        margin: -10px 0 0 -22px;
+        position: absolute;
+        transform: rotate(31deg);
+        transform-origin: bottom;
+        width: 50px;
+      }
+      .w-arm_right::before {
+        animation-delay: 0.07s;
+      }
+      .w-arm::after {
+        content: '';
+        background-color: #e7ddb6;
+        border-radius: 3px 0 30px 30px;
+        height: 85px;
+        margin: 54px 0 0 -55px;
+        position: absolute;
+        transform: rotate(49deg);
+        width: 50px;
+      }
+  
+    .w-leg {
+      animation: 1.3s ease-in infinite alternate legShift;
+      margin: 49px 0 0 -52px;
+      position: absolute;
+    }
+      .w-leg-top {
+        animation: 1.3s ease-in infinite alternate legTop;
+        background-color: #e7ddb6;
+        height: 50px;
+        position: absolute;
+        width: 45px;
+      }
+      .w-leg-bottom {
+        animation: 1.3s ease-in infinite alternate legBottom;
+        background-color: #eb486b;
+        height: 70px;
+        margin: 40px 0 0 0px;
+        position: absolute;
+        width: 45px;
+      }
+      .w-leg-bottom::before {
+        animation: 1.3s ease-in infinite alternate bootsBackground;
+        background-color: #eb486b;
+        border-radius: 50% 0 0 0;
+        content: '';
+        height: 10px;
+        margin: 60px 0 0 -20px;
+        position: absolute;
+        width: 20px;
+      }
+      .w-leg_right {
+        animation: 1.3s ease-in -1.3s infinite alternate legShiftScale;
+        margin-left: 52px;
+        transform: scaleX(-1);
+      }
+        .w-leg_right .w-leg-top,
+        .w-leg_right .w-leg-bottom,
+        .w-leg_right .w-leg-bottom::before {
+          animation-delay: 1.3s;
+        }
+  
+  .w-shoelace,
+  .w-shoelace::after {
+    background-color: yellow;
+    border-radius: 2px;
+    height: 2px;
+    margin: 15px 0 0 1px;
+    transform: rotate(45deg);
+    width: 12px;
+  }
+    .w-shoelace::after {
+      content: '';
+      margin: 0;
+      position:absolute;
+      transform: rotate(90deg);
+    }
+  .w-heel {
+    bottom: 0;
+    height: 20px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    width: 20px;
+  }
+    .w-heel::after {
+      background-color: yellow;
+      border-radius: 50%;
+      content: '';
+      height: 40px;
+      position: absolute;
+      width: 40px;
+    }
+  @keyframes legShift {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, 0);
+    }
+    75% {
+      transform: translate(0, -20px);
+    }
+    90% {
+      transform: translate(20px, 0);
+    }
+    100% {
+      transform: translate(20px, 0);
+    }
+  }
+  
+  @keyframes legShiftScale {
+    0% {
+      transform: translate(0, 0) scaleX(-1);
+      z-index: 0;
+    }
+    50% {
+      transform: translate(0, 0) scaleX(-1);
+      z-index: 0;
+    }
+    75% {
+      transform: translate(0, -20px) scaleX(-1);
+      z-index: 0;
+    }
+    90% {
+      transform: translate(-20px, 0) scaleX(-1);
+      z-index: -1;
+    }
+    100% {
+      transform: translate(-20px, 0) scaleX(-1);
+      z-index: -1;
+    }
+  }
+  
+  @keyframes legTop {
+    0% {
+      background-color: #e7ddb6;
+      transform: rotate(0deg);
+    }
+    50% {
+      background-color: #e7ddb6;
+      transform: rotate(0deg);
+    }
+    75% {
+      background-color: #e7ddb6;
+      transform: rotate(30deg);
+    }
+    90% {
+      background-color: #b8b092;
+      transform: rotate(0deg);
+    }
+    100% {
+      background-color: #b8b092;
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes legBottom {
+    0% {
+      background-color: #eb486b;
+      transform: translate(0, 0)  rotate(0deg);
+    }
+    50% {
+      background-color: #eb486b;
+      transform: translate(0, 0)  rotate(0deg);
+    }
+    75% {
+      background-color: #eb486b;
+      transform: translate(0px, -15px) rotate(-20deg);
+    }
+    90% {
+      background-color: #ba3b56;
+      transform: translate(0, 0)  rotate(0deg);
+    }
+    100% {
+      background-color: #ba3b56;
+      transform: translate(0, 0)  rotate(0deg);
+    }
+  }
+  
+  @keyframes bootsBackground {
+    0% {
+      background-color: #eb486b;
+    }
+    75% {
+      background-color: #eb486b;
+    }
+    90% {
+      background-color: #ba3b56;
+    }
+    100% {
+      background-color: #ba3b56;
+    }
+  }
+  
+  @keyframes bodyStep {
+    0% {
+      transform: translate3d(-22px, 0, 0);
+    }
+    2% {
+      transform: translate3d(-22px, 0, 0);
+    }
+    25% {
+      transform: translate3d(-11px, -15px, 0);
+    }
+    50% {
+      transform: translate3d(0, 0, 0);
+    }
+    75% {
+      transform: translate3d(11px, -15px, 0);
+    }
+    98% {
+      transform: translate3d(22px, 0, 0);
+    }
+    100% {
+      transform: translate3d(22px, 0, 0);
+    }
+  }
+  
+  @keyframes bodyStepMirror {
+    0% {
+      transform: translate3d(-22px, 0, 0) scaleX(-1);
+    }
+    25% {
+      transform: translate3d(-11px, -15px, 0) scaleX(-1);
+    }
+    50% {
+      transform: translate3d(0, 0, 0) scaleX(-1);
+    }
+    75% {
+      transform: translate3d(11px, -15px, 0) scaleX(-1);
+    }
+    100% {
+      transform: translate3d(22px, 0, 0) scaleX(-1);
+    }
+  }
+  
+  @keyframes skinShake {
+    from {
+      transform: translateX(-3px);
+    }
+    to {
+      transform: translateX(3px);
+    }
+  }
+  
+  @keyframes nipplesShake {
+    from {
+      transform: translate(44px, -25px);
+    }
+    to {
+      transform: translate(50px, -25px);
+    }
+  }
+  
+  @keyframes armShake {
+    from {
+      transform: rotate(28deg);
+    }
+    to {
+      transform: rotate(32deg);
+    }
+  }
+  .LinkedIn,
+  .LinkedIn:visited {
+    bottom: .25em;
+    color: #e7ddb6;
+    position: absolute;
+    right: .25em;
+  }
+  .LinkedIn:hover {
+    color: white;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  ul .key {
+    position: relative;
+    width: 60px;
+    height: 180px;
+    border: 1px solid black;
+    border-right: none;
+    // background: #fffff0;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px #666;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+  ul .key:last-child {
+    border-right: 1px solid black;
+  }
+  ul .black-key {
+    position: absolute;
+    top: -1px;
+    left: 37.5px;
+    width: 45px;
+    height: 120px;
+    background: black;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px #666;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    color: white;
+  }
+  ul .active {
+    box-shadow: 0px 1px 3px #666;
+  }
+
+footer{
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  margin-left: 200px;
+
+  textarea{
+    width: 1000px;
+    text-align: center;
+    font-size: 30px;
+    height: 150px;
+    font-family: monospace;
+  }
+  #play {
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
