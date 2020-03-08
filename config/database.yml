@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: piano_production
-  username: piano
-  password: <%= ENV['PIANO_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
