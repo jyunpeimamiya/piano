@@ -120,9 +120,9 @@ body {
 //     }
 // }
   .w {
-    left: 50%;
+    left: 15%;
     position: absolute;
-    top: 50%;
+    bottom: 80%;
   }
   
   .w-body {
@@ -520,7 +520,7 @@ body {
     display: flex;
     align-items: center;
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
@@ -576,6 +576,7 @@ footer{
     font-size: 30px;
     height: 150px;
     font-family: monospace;
+    position: absolute;
   }
   #play {
     align-items: center;
